@@ -1,0 +1,11 @@
+-- 思维导图表
+CREATE TABLE IF NOT EXISTS `error_mind_map` (
+    `id` BIGINT NOT NULL AUTO_INCREMENT,
+    `user_id` BIGINT NOT NULL COMMENT '所属用户',
+    `title` VARCHAR(200) NOT NULL COMMENT '导图标题',
+    `data` LONGTEXT COMMENT '导图JSON数据',
+    `create_time` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    `update_time` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`),
+    INDEX `idx_user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='思维导图';
